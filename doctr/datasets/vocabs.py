@@ -8,7 +8,6 @@ from typing import Dict
 
 __all__ = ["VOCABS"]
 
-
 VOCABS: Dict[str, str] = {
     "digits": string.digits,
     "ascii_letters": string.ascii_letters,
@@ -20,6 +19,7 @@ VOCABS: Dict[str, str] = {
     "hindi_digits": "٠١٢٣٤٥٦٧٨٩",
     "arabic_diacritics": "ًٌٍَُِّْ",
     "arabic_punctuation": "؟؛«»—",
+    "cyrillic_letters": "абвгдежзийклмнопрстуфхцчшщъыьэюяАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
 }
 
 VOCABS["latin"] = VOCABS["digits"] + VOCABS["ascii_letters"] + VOCABS["punctuation"]
@@ -31,13 +31,13 @@ VOCABS["spanish"] = VOCABS["english"] + "áéíóúüñÁÉÍÓÚÜÑ" + "¡¿"
 VOCABS["italian"] = VOCABS["english"] + "àèéìíîòóùúÀÈÉÌÍÎÒÓÙÚ"
 VOCABS["german"] = VOCABS["english"] + "äöüßÄÖÜẞ"
 VOCABS["arabic"] = (
-    VOCABS["digits"]
-    + VOCABS["hindi_digits"]
-    + VOCABS["arabic_letters"]
-    + VOCABS["persian_letters"]
-    + VOCABS["arabic_diacritics"]
-    + VOCABS["arabic_punctuation"]
-    + VOCABS["punctuation"]
+        VOCABS["digits"]
+        + VOCABS["hindi_digits"]
+        + VOCABS["arabic_letters"]
+        + VOCABS["persian_letters"]
+        + VOCABS["arabic_diacritics"]
+        + VOCABS["arabic_punctuation"]
+        + VOCABS["punctuation"]
 )
 VOCABS["czech"] = VOCABS["english"] + "áčďéěíňóřšťúůýžÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ"
 VOCABS["polish"] = VOCABS["english"] + "ąćęłńóśźżĄĆĘŁŃÓŚŹŻ"
@@ -47,11 +47,12 @@ VOCABS["danish"] = VOCABS["english"] + "æøåÆØÅ"
 VOCABS["finnish"] = VOCABS["english"] + "äöÄÖ"
 VOCABS["swedish"] = VOCABS["english"] + "åäöÅÄÖ"
 VOCABS["vietnamese"] = (
-    VOCABS["english"]
-    + "áàảạãăắằẳẵặâấầẩẫậéèẻẽẹêếềểễệóòỏõọôốồổộỗơớờởợỡúùủũụưứừửữựiíìỉĩịýỳỷỹỵ"
-    + "ÁÀẢẠÃĂẮẰẲẴẶÂẤẦẨẪẬÉÈẺẼẸÊẾỀỂỄỆÓÒỎÕỌÔỐỒỔỘỖƠỚỜỞỢỠÚÙỦŨỤƯỨỪỬỮỰIÍÌỈĨỊÝỲỶỸỴ"
+        VOCABS["english"]
+        + "áàảạãăắằẳẵặâấầẩẫậéèẻẽẹêếềểễệóòỏõọôốồổộỗơớờởợỡúùủũụưứừửữựiíìỉĩịýỳỷỹỵ"
+        + "ÁÀẢẠÃĂẮẰẲẴẶÂẤẦẨẪẬÉÈẺẼẸÊẾỀỂỄỆÓÒỎÕỌÔỐỒỔỘỖƠỚỜỞỢỠÚÙỦŨỤƯỨỪỬỮỰIÍÌỈĨỊÝỲỶỸỴ"
 )
 VOCABS["hebrew"] = VOCABS["english"] + "אבגדהוזחטיכלמנסעפצקרשת" + "₪"
+VOCABS["russian"] = VOCABS["digits"] + VOCABS["punctuation"] +VOCABS["cyrillic_letters"]
 VOCABS["multilingual"] = "".join(
     dict.fromkeys(
         VOCABS["french"]

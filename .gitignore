@@ -138,3 +138,8 @@ wandb/
 *.pt
 *.pb
 *.index
+/fonts/
+!/fonts/calibri.ttf
+!/fonts/
+/0.jpg
+/test.py
